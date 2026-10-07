@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "operatorforge"
+version = "0.1.0"
+description = "Deterministic NumPy neural operators for scientific machine learning"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "晨星" }]
+dependencies = [
+  "numpy==2.5.3",
+  "scipy==1.18.1",
+  "scikit-learn==1.9.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+  "ruff==0.16.10",
+]
+
+[project.scripts]
+operatorforge = "cli:main"
+
+[tool.setuptools]
+py-modules = ["cli"]
+packages = ["core", "data", "operators", "training", "eval", "pipeline", "operatorforge"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "--strict-markers --strict-config"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = ["benchmark.json", "benchmark_repeat.json"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = [
+  "E501", # Scientific formulas are clearer when kept on one line.
+  "N803", # Mathematical arrays conventionally use X and Y.
+  "N806", # Mathematical matrices conventionally use capital letters.
+]
+
+[tool.coverage.run]
+source = ["core", "data", "operators", "training", "eval", "pipeline", "operatorforge"]
+omit = ["tests/*", "examples/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

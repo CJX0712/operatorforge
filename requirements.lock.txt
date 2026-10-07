@@ -1,0 +1,10 @@
+# Frozen, installable dependency lock for OperatorForge.
+# Every line is a plain "name==version" specifier. No local path or
+# editable references are embedded, so `pip install -r requirements.lock.txt` works
+# on any machine with network access.
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+pytest==9.1.1
+pytest-cov==7.1.0
+ruff==0.16.10

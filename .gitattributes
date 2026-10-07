@@ -1,0 +1,14 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.pyi text eol=lf
+*.cfg text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.Dockerfile text eol=lf
+*.svg text eol=lf
+benchmark.json linguist-generated=false
+benchmark_repeat.json linguist-generated=false

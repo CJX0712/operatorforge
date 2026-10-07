@@ -1,0 +1,11 @@
+# Runtime dependencies for OperatorForge.
+# For a fully reproducible, byte-for-byte install use requirements.lock.txt
+# (name==version, no local file:// references).
+numpy>=2.5,<3.0
+scipy>=1.18,<2.0
+scikit-learn>=1.9,<2.0
+
+# Development / CI tooling (optional, not required to run the library or demo):
+# pytest>=9.1,<10
+# pytest-cov>=7.1,<8
+# ruff>=0.16,<1
