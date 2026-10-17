@@ -44,7 +44,7 @@ jobs:
           PYTHONHASHSEED: "0"
         run: >-
           pytest -q
-          --cov=operatorforge
+          --cov
           --cov-report=term-missing
           --cov-fail-under=80
 
